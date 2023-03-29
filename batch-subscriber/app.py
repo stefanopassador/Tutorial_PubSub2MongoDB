@@ -6,7 +6,7 @@ from google.cloud import pubsub_v1
 from pymongo import MongoClient
 
 ## GCP config
-PROJECT_ID = 'streaming-ingestion-382015'
+PROJECT_ID = 'streaming-ingestion-XXXXXX'
 TOPIC_ID = 'sample-topic'
 SUBSCRIPTION_ID = 'sample-topic-sub'
 SERVICE_ACCOUNT_PATH = './batch-subscription-service-account.json'
