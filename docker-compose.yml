@@ -1,0 +1,27 @@
+version: "3.8"
+services:
+  streaming-publisher:
+    build: ./streaming-publisher/
+  batch-subscriber:
+    build: ./batch-subscriber/
+    depends_on: 
+      - mongodb
+  mongodb:
+    image: arm64v8/mongo:4.0
+    platform: linux/arm64/v8
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=user
+      - MONGO_INITDB_ROOT_PASSWORD=pass
+    volumes:
+      - type: bind
+        source: ./data
+        target: /data/db
+
+
+  # myapplication:
+  #   image: mongodb/mongodb-community-server:6.0-ubi8
+  #   environment:
+  #     - CONN_STR=mongodb://user:pass@mongodb
+  #   command: '/bin/bash -c "sleep 5; mongosh $$CONN_STR --eval \"show dbs;\""'
+  #   depends_on:
+  #     - mongodb
