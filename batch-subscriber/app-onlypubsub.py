@@ -3,7 +3,6 @@ import time
 import random
 import json
 from google.cloud import pubsub_v1
-from pymongo import MongoClient
 
 ## GCP config
 PROJECT_ID = 'streaming-ingestion-382015'
