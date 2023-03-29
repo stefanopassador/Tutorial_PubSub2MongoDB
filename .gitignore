@@ -2,4 +2,4 @@
 /data
 *.DS_Store
 /batch-subscriber/batch-subscription-service-account.json
-/streaming-publisher/streaming-subscription-service-account.json
+/streaming-publisher/streaming-publisher-service-account.json

@@ -11,18 +11,10 @@ TOPIC_ID = 'sample-topic'
 SUBSCRIPTION_ID = 'sample-topic-sub'
 SERVICE_ACCOUNT_PATH = './batch-subscription-service-account.json'
 
-topic_name = f'projects/{PROJECT_ID}/topics/{TOPIC_ID}'
 subscription_name = f'projects/{PROJECT_ID}/subscriptions/{SUBSCRIPTION_ID}'
-
-## MongoDB config
-client = MongoClient('mongodb://user:pass@mongodb')
-db = client['sample-database']
-
 
 def callback(message):
     print(message.data)
-    messages = db.messages
-    messages.insert_one(json.loads(message.data))
     message.ack()
 
 if __name__ == '__main__':

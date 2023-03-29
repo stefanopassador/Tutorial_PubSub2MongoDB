@@ -1,6 +1,6 @@
 FROM python:latest
 WORKDIR /code
-ADD streaming-ingestion-service-account.json streaming-ingestion-service-account.json
+ADD streaming-publisher-service-account.json streaming-publisher-service-account.json
 ADD requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 COPY app.py app.py

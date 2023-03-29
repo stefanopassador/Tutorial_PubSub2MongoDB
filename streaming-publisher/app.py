@@ -5,7 +5,7 @@ import json
 from google.cloud import pubsub_v1
 
 PROJECT_ID = 'streaming-ingestion-382015'
-SERVICE_ACCOUNT_PATH = './streaming-ingestion-service-account.json'
+SERVICE_ACCOUNT_PATH = './streaming-publisher-service-account.json'
 TOPIC_ID = 'sample-topic'
 
 def publish_message(message):
@@ -28,7 +28,7 @@ if __name__ == '__main__':
     
     n = 0
     while True:
-        time.sleep(1)
         add_new_row(n)
         n = n + 1
         print(f'Published message: {n}')
+        time.sleep(1)
